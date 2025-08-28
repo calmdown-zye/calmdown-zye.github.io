@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: CSI | Calm Statistical Inference # the main title
 
-tagline: "There are no facts, only interpretations." - Friedrich Nietzsche  # it will display as the subtitle
+tagline: '"There are no facts, only interpretations." - Friedrich Nietzsche'  # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   데이터 속에 숨겨진 사실을 해석합니다. 
