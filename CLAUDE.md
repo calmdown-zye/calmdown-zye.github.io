@@ -13,7 +13,9 @@ Jekyll + Chirpy 테마(`jekyll-theme-chirpy ~> 7.3`)로 만든 개인 블로그 
 - `design/` 리디자인 시안 원본. 로컬 전용이라 `.gitignore`에 들어 있다. 시안 도구 형식이라 그대로 쓰지 않고 색, 글꼴, 배치, 알고리즘만 참고한다.
 
 ## 로컬 실행
-- Ruby 3.3.x (rbenv). 시스템 Ruby 2.6은 쓰지 않는다.
+- Ruby 3.3.12 (rbenv, `.ruby-version`). 시스템 Ruby 2.6은 쓰지 않는다.
+- 셸에서 `ruby -v`가 3.3.12가 아니면 `eval "$(rbenv init - zsh)"`가 `~/.zshrc`에 없는 것이다. 없을 때는 명령 앞에 `export PATH="$HOME/.rbenv/shims:$PATH"`를 붙인다.
+- 의존성은 `vendor/bundle`에 설치된다(`bundle config set --local path vendor/bundle`, git에서 제외됨).
 - `bundle install` 후 `bash tools/run.sh` → http://127.0.0.1:4000
 - 검사: `JEKYLL_ENV=production bundle exec jekyll b && bundle exec htmlproofer _site --disable-external` (CI와 같은 방식)
 
