@@ -1,0 +1,9 @@
+# 첫 화면의 RESEARCH 섹션 데이터.
+# 비어 있으면([]) 섹션과 상단 메뉴의 RESEARCH가 둘 다 숨겨진다.
+# 항목을 추가하면 자동으로 나타난다. 예:
+#
+# - year: 2025
+#   title: 연구 제목
+#   field: LLM Alignment
+#   url: /posts/some-post/   # 선택. 없으면 제목은 링크 없이 표시된다.
+[]

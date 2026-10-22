@@ -5,8 +5,12 @@ Jekyll + Chirpy 테마(`jekyll-theme-chirpy ~> 7.3`)로 만든 개인 블로그 
 
 ## 구조
 - `_config.yml` 사이트 설정. 155행 아래(`kramdown`, `collections`, `defaults` 등)는 건드리지 않는다.
+- `index.html` 새 첫 화면(`/`). Chirpy 레이아웃 없는 독립 페이지(`layout: null`)이고 CSS/JS가 안에 들어 있다. Liquid로 처리되므로 인라인 CSS/JS에 `{{`, `{%`를 쓰지 않는다.
+- `blog/index.html` 기존 Chirpy 홈(글 목록)이 옮겨온 곳(`/blog/`). 페이지 넘김은 `_config.yml`의 `paginate_path: "/blog/page:num/"`. `jekyll-paginate`는 경로가 가장 긴 `index.html`을 템플릿으로 고르므로 `blog/index.html`이 선택된다.
+- `_includes/sidebar.html`, `topbar.html`, `post-paginator.html` gem에서 복사해 고친 오버라이드(블로그 홈 링크 `/` → `/blog/`). 각 파일 맨 위 주석에 바꾼 곳이 적혀 있다. Chirpy 버전을 올릴 때 gem 원본과 diff를 확인한다.
+- `_data/research.yml` 첫 화면 RESEARCH 섹션 데이터. `[]`면 섹션과 메뉴가 숨겨진다.
 - `_posts/` 글. 파일명 `YYYY-MM-DD-제목.md`.
-- `_tabs/` 사이드바 메뉴 페이지. front matter의 `order`가 순서.
+- `_tabs/` 사이드바 메뉴 페이지(archives, categories, tags). front matter의 `order`가 순서.
 - `_data/contact.yml`, `_data/share.yml` 사이드바 연락처 아이콘, 글 하단 공유 버튼.
 - `_plugins/posts-lastmod-hook.rb` git 이력으로 `last_modified_at` 계산 (그래서 CI는 `fetch-depth: 0`).
 - `assets/lib` 서브모듈(`chirpy-static-assets`). 지금은 비어 있고 CDN을 쓴다.

@@ -144,6 +144,8 @@ pwa:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
 paginate: 10
+# 블로그 글 목록은 /blog/ 에서 시작한다. 예: 11번째 글부터 /blog/page2/ (1쪽은 /blog/)
+paginate_path: "/blog/page:num/"
 
 # The base URL of your site
 baseurl: ""
